@@ -5,17 +5,23 @@
 
 # Contents
 
+#### 온라인 강의
+
 - [백준 SW 역량테스트 준비](https://code.plus/course/32)
 
 - [프로그래머스 파이썬을 무기로 코딩테스트 광탈을 면하자!](https://programmers.co.kr/learn/courses/9877)
 
 - [프로그래머스 K사 코딩테스트 기출문제 Best 7](https://programmers.co.kr/learn/courses/10336)
 
-- [백준 오프라인 스터디](https://www.acmicpc.net/)
-
 - [프로그래머스 온라인 스터디](https://programmers.co.kr/learn/courses/10585)
 
-## Python
+#### 오프라인 스터디
+
+- [백준 오프라인 스터디](https://www.acmicpc.net/)
+
+----
+
+## 디버깅 및 코딩 팁
 
 
 #### 입출력
