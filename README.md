@@ -7,17 +7,17 @@
 
 #### 온라인 강의
 
-- [백준 SW 역량테스트 준비](https://code.plus/course/32)
+- [백준 SW 역량테스트 준비](https://github.com/yunsikus/Algorithm_Training/tree/master/%EB%B0%B1%EC%A4%80_SW_%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%A4%80%EB%B9%84)
 
-- [프로그래머스 파이썬을 무기로 코딩테스트 광탈을 면하자!](https://programmers.co.kr/learn/courses/9877)
+- [프로그래머스 파이썬을 무기로 코딩테스트 광탈을 면하자!](https://github.com/yunsikus/Algorithm_Training/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%9D%84_%EB%AC%B4%EA%B8%B0%EB%A1%9C_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8_%EA%B4%91%ED%83%88%EC%9D%84_%EB%A9%B4%ED%95%98%EC%9E%90)
 
 - [프로그래머스 K사 코딩테스트 기출문제 Best 7](https://programmers.co.kr/learn/courses/10336)
 
-- [프로그래머스 온라인 스터디](https://programmers.co.kr/learn/courses/10585)
+- [프로그래머스 온라인 스터디](https://github.com/yunsikus/Algorithm_Training/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EC%98%A8%EB%9D%BC%EC%9D%B8_%EC%8A%A4%ED%84%B0%EB%94%94)
 
 #### 오프라인 스터디
 
-- [백준 오프라인 스터디](https://www.acmicpc.net/)
+- [백준 오프라인 스터디](https://github.com/yunsikus/Algorithm_Training/tree/master/%EB%B0%B1%EC%A4%80_%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8_%EC%8A%A4%ED%84%B0%EB%94%94)
 
 ----
 
@@ -49,9 +49,9 @@ for i in range(a):
 
 #### Pythonic 문제풀이
 
-1. **sorted함수** - key, reverse를 활용
+1. **sort 함수** - key, reverse를 활용
 
-ex) [가장 큰 수](https://programmers.co.kr/learn/courses/30/lessons/42746)
+ex) [프로그래머스_가장 큰 수](https://programmers.co.kr/learn/courses/30/lessons/42746)
 ```python
 def solution(numbers):
     numbers = [str(x) for x in numbers]
@@ -61,4 +61,21 @@ def solution(numbers):
     else:
         answer =  ''.join(numbers)
     return answer
+```
+
+2. **2차원 리스트 90도 회전**
+
+ex) [프로그래머스_자물쇠와 열쇠](https://programmers.co.kr/learn/courses/10336/lessons/64196)
+
+```python
+def rotate_a_matrix_by_90_degree(a):
+  n = len(a) # 행 길이 계산
+  m = len(a[0]) # 열 길이 계산
+
+  result = [[0] * n for _ in range(m)] ## 결과 리스
+  for i in range(n):
+    for j in range(m):
+      result[j][n-i-1] = a[i][j]
+
+  return result
 ```
