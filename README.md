@@ -72,10 +72,34 @@ def rotate_a_matrix_by_90_degree(a):
   n = len(a) # 행 길이 계산
   m = len(a[0]) # 열 길이 계산
 
-  result = [[0] * n for _ in range(m)] ## 결과 리스
+  result = [[0] * n for _ in range(m)] ## 결과 리스트
   for i in range(n):
     for j in range(m):
       result[j][n-i-1] = a[i][j]
 
   return result
 ```
+3. **List comprehension**으로 복잡한 if문을 간략화함
+
+ex) [프로그래머스_문자열압축](https://programmers.co.kr/learn/courses/10336/lessons/64194)
+
+```python
+def solutions(s):
+    answer = len(s)
+    for i in range(1,(len(s)//2)+1):
+        new_s = ''
+        count = 1
+        prev = s[:i]
+        for j in range(1,len(s)//i+1):
+            if prev == s[i*j:i*j+i]:
+                count += 1
+            else:  
+                new_s += str(count) + prev if count >= 2 else prev
+                ## count가 2이상인 경우만 new_s에 추가.
+                ## count가 1이면 숫자 빼고 string만 추가.
+                count = 1   
+                prev = s[i*j:i*j+i]
+
+        new_s += str(count) + prev if count >= 2 else prev
+        answer = min(answer,len(new_s))
+  ```
