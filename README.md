@@ -46,6 +46,16 @@ for i in range(a):
     if i != a-1:
         print() ## print(' ') 로 해서 "출력형식이 잘못되었슫니다" 계속 뜸
 ```
+3. **String 출력** - format을 쓰는게 깔끔
+
+ex) [4796_캠핑](https://www.acmicpc.net/problem/4796)
+
+```python
+  for i in range(len(matrix)-1):
+    answer = do(matrix[i])
+    print("Case {}: {}".format(i+1,answer)) ## format
+
+```
 
 #### Pythonic 문제풀이
 
