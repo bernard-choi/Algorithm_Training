@@ -9,11 +9,9 @@
 
 - [백준 SW 역량테스트 준비](https://github.com/yunsikus/Algorithm_Training/tree/master/%EB%B0%B1%EC%A4%80_SW_%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%A4%80%EB%B9%84)
 
-- [프로그래머스 파이썬을 무기로 코딩테스트 광탈을 면하자!](https://github.com/yunsikus/Algorithm_Training/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%9D%84_%EB%AC%B4%EA%B8%B0%EB%A1%9C_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8_%EA%B4%91%ED%83%88%EC%9D%84_%EB%A9%B4%ED%95%98%EC%9E%90)
-
-- [프로그래머스 K사 코딩테스트 기출문제 Best 7](https://github.com/yunsikus/Algorithm_Training/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_K%EC%82%AC_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8_%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C_Best7)
-
-- [프로그래머스 온라인 스터디](https://github.com/yunsikus/Algorithm_Training/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EC%98%A8%EB%9D%BC%EC%9D%B8_%EC%8A%A4%ED%84%B0%EB%94%94)
+- 프로그래머스
+    - [Python/문제풀이] 파이썬을 무기로, 코딩테스트 광탈을 면하자!
+    - [Python/문제풀이] K사 코딩테스트 기출문제 Best7
 
 #### 오프라인 스터디
 
