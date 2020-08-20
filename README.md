@@ -87,7 +87,7 @@ def rotate_a_matrix_by_90_degree(a):
 
   return result
 ```
-3. **List comprehension**으로 복잡한 if문을 간략화함
+3. **List comprehension**으로 복잡한 if문을 간략화함**
 
 ex) [프로그래머스_문자열압축](https://programmers.co.kr/learn/courses/10336/lessons/64194)
 
@@ -175,6 +175,12 @@ answer = index_of_greater_than_x(a,3)
 print(answer) ## index 6
   ```
 
+5. **unlist in python**
+```python
+nested_list = [['a','b','c'],['d','e','f','g']]
 
+# unlist in python
+[y for x in nested_list for y in x] ## ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+```
 
-#### 알고리즘
+#### 자료구*
