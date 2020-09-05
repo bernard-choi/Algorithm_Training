@@ -3,29 +3,13 @@
 
 알고리즘 개인공부(Python)
 
-# Contents
-
-#### 온라인 강의
-
-- [백준 SW 역량테스트 준비](https://github.com/yunsikus/Algorithm_Training/tree/master/%EB%B0%B1%EC%A4%80_SW_%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%A4%80%EB%B9%84)
-
-- 프로그래머스
-    - [Python/문제풀이] 파이썬을 무기로, 코딩테스트 광탈을 면하자!
-    - [Python/문제풀이] K사 코딩테스트 기출문제 Best7
-
-#### 오프라인 스터디
-
-- [백준 오프라인 스터디](https://github.com/yunsikus/Algorithm_Training/tree/master/%EB%B0%B1%EC%A4%80_%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8_%EC%8A%A4%ED%84%B0%EB%94%94)
 
 ----
 
-## 디버깅 및 코딩 팁
-
-
-#### 입출력
+## 1. 디버깅
 
 1. **입력 개수가 주어지지 않을때**- try except 처리로 해결
-ex) [1793_타일링](https://www.acmicpc.net/problem/1793)
+
 ```Python
 while True:
     try:
@@ -36,7 +20,7 @@ while True:
 ```
 
 2. **출력형식이 잘못되었습니다**. - 불필요한 공백 출력시 눈에 띄지는 않지만 에러가 출력됨.
-ex) [17276_배열돌리기](https://www.acmicpc.net/problem/17276)
+
 ```python
 for i in range(a):
     for j in range(a):
@@ -44,22 +28,13 @@ for i in range(a):
     if i != a-1:
         print() ## print(' ') 로 해서 "출력형식이 잘못되었슫니다" 계속 뜸
 ```
-3. **String 출력** - format을 쓰는게 깔끔
 
-ex) [4796_캠핑](https://www.acmicpc.net/problem/4796)
+3. **시간초과** - input() 대신 sys.stdin.readline()
+----
+## 2. Pythonic 문제풀이
 
-```python
-  for i in range(len(matrix)-1):
-    answer = do(matrix[i])
-    print("Case {}: {}".format(i+1,answer)) ## format
+1. **Sort 함수** - key, reverse를 활용
 
-```
-
-#### Pythonic 문제풀이
-
-1. **sort 함수** - key, reverse를 활용
-
-ex) [프로그래머스_가장 큰 수](https://programmers.co.kr/learn/courses/30/lessons/42746)
 ```python
 def solution(numbers):
     numbers = [str(x) for x in numbers]
@@ -70,10 +45,56 @@ def solution(numbers):
         answer =  ''.join(numbers)
     return answer
 ```
+2. **Count 함수** - collections의 Count함수를 활용하여 리스트내 원소들의 개수를 편하게 추출
+
+```python
+from collections import Counter
+
+my_list = [1,2,3,4,4,4]
+Counter(my_list)[4] # 원소 4의 개수 3이 출력됨
+```
+
+
+3. **List comprehension** 으로 복잡한 for 을 간략화, 딕셔너리 생성 가능. zip으로 두개 이상의 리스트를 각 원소별로 작업 가능
+
+```python
+specs = [['yunsik','100'],['choi','200']]
+spec_dict =  {key : int(value) for key, value in specs}
+
+list1 = [1,2,3]
+list2 = [4,5,6]
+
+print([x + y for x, y in zip(list1, list2)]) # [5, 7, 9]
+```
+
+
+4. **Nested List** 에서 작업하기
+```python
+# unlist in python
+nested_list = [['a','b','c'],['d','e','f','g']]
+unnested_list = [y for x in nested_list for y in x] ## ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+# sum of the list
+nested_int = [[1,2,3],[4,5,6]]
+total_sum = sum(map(sum,nested_int))
+```
+
+5. **String 출력** - format을 쓰는게 깔끔
+
+```python
+  for i in range(len(matrix)-1):
+    answer = do(matrix[i])
+    print("Case {}: {}".format(i+1,answer)) ## format
+
+```
+
+----
+
+## 3. 그 외
 
 2. **2차원 리스트 90도 회전**
 
-ex) [프로그래머스_자물쇠와 열쇠](https://programmers.co.kr/learn/courses/10336/lessons/64196)
+ex ) [프로그래머스_자물쇠와 열쇠](https://programmers.co.kr/learn/courses/10336/lessons/64196)
 
 ```python
 def rotate_a_matrix_by_90_degree(a):
@@ -86,101 +107,3 @@ def rotate_a_matrix_by_90_degree(a):
       result[j][n-i-1] = a[i][j]
 
   return result
-```
-3. **List comprehension**으로 복잡한 if문을 간략화함**
-
-ex) [프로그래머스_문자열압축](https://programmers.co.kr/learn/courses/10336/lessons/64194)
-
-```python
-def solutions(s):
-    answer = len(s)
-    for i in range(1,(len(s)//2)+1):
-        new_s = ''
-        count = 1
-        prev = s[:i]
-        for j in range(1,len(s)//i+1):
-            if prev == s[i*j:i*j+i]:
-                count += 1
-            else:  
-                new_s += str(count) + prev if count >= 2 else prev
-                ## count가 2이상인 경우만 new_s에 추가.
-                ## count가 1이면 숫자 빼고 string만 추가.
-                count = 1   
-                prev = s[i*j:i*j+i]
-
-        new_s += str(count) + prev if count >= 2 else prev
-        answer = min(answer,len(new_s))
-```
-4. **이진분류 모듈 bisect** 를 sorted된 리스트에 적용
-
-```python
-## bisect_left(a,x): 정렬된 순서를 유지하면서 배열 a에 x를 삽입할 가장 왼쪽 위치를 반환
-## bisect_right(a,x): 정렬된 순서를 유지하면서 배열 a에 x를 삽일할 가장 오른쪽 위치를 반환
-
-from bisect import bisect_left, bisect_right
-a = [1,2,4,4,8]
-x = 4
-print(bisect_left(a,x)) ## index 2
-print(bisect_right(a,x)) ## index 4
-```
-```python
-## 특정 범위의 데이터 개수 구하기
-
-def count_by_range(a,left_value,right_value):
-    right_index = bisect_right(a,right_value)
-    left_index = bisect_left(a,left_value)
-    return right_index - left_index
-
-a = [1,2,3,3,3,3,4,4,8,9]
-print(count_by_range(a,4,4)) ## 4가 몇개 있는지
-print(count_by_range(a,-1,3)) ## -1과 3 사이의 숫자가 몇개 있는지
-```
-
-```python
-## x보자 작은 데이터 중에서 가장 큰 값의 인덱스를 반환
-
-def index_of_less_than_x(a,x):
-    i = bisect_left(a,x)
-    if i:
-        return i-1
-    return None
-
-answer = index_of_less_than_x(a,3)
-print(answer) ## index 1
-```
-```python
-# x보다 큰 데이터 중에서, 가장 작은 값의 인덱스를 반환
-
-def index_of_greater_than_x(a,x):
-    i = bisect_right(a,x)
-    if i:
-        return i
-    return None
-
-answer = index_of_greater_than_x(a,3)
-print(answer) ## index 6
-```
-
-```python
-# x보다 크거나 같은 데이터 중에서, 가장 작은 값의 인덱스를 반환
-
-def index_of_greater_equal_than_x(a,x):
-    i = bisect_left(a,x)
-    if i!= len(a):
-        return i
-
-    return None
-
-answer = index_of_greater_than_x(a,3)
-print(answer) ## index 6
-  ```
-
-5. **unlist in python**
-```python
-nested_list = [['a','b','c'],['d','e','f','g']]
-
-# unlist in python
-[y for x in nested_list for y in x] ## ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-```
-
-#### 자료구*
